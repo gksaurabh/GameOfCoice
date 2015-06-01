@@ -8,12 +8,15 @@ Due Date		: <due date>
 
 #include <iostream>
 #include <string>
-#include "Infant.cpp"
+#include "WelcomeFunctions.cpp"
+// #include "School.cpp"
+// #ifndef Included_NameModel_H
+// #define Included_NameModel_H
+
 //#include "WelcomeUtility.cpp"
 
 using namespace std;
 //string toLower(string sInput, int iLength);
-
 
 
 int main ()
@@ -22,9 +25,11 @@ int main ()
 	int ipoints = 0; //Global variable to keep track of score.
 	int icounter;
 	string splayername, sinput1, sinput2;
+	bool bTroublesomeKid;
 	// Initialization of variables.	
 	ipoints = 0;
 	icounter = 0;	
+	bTroublesomeKid = false;
 	while (ipoints >= 0){
 
 		// Introduction	
@@ -49,6 +54,18 @@ int main ()
 		}
 		else{
 			ipoints = infancy(ipoints);
+			if (ipoints > 10){
+				cout << "You grow up to be a good kid without troubling your parents. Your parents have been able to ";
+				cout << "provide well for you. It is now up to you to make your life as successful as theirs." <<  endl;
+				elemantrySchoolGoodKid (ipoints);
+			}
+			else if(ipoints < 10){
+				cout << "You have troubled your parents a lot. Your father is now bald. They have spent a fortune ";
+				cout << "on babysitters. Your future ahead is a tough challenge."<< endl;
+				bTroublesomeKid = true;
+
+			}
+			
 		}
 		// 	icounter = 11;
 		// }
