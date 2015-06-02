@@ -24,6 +24,7 @@ int infancy (int iInPoints)
 	string sinput1 = "";
 
 	iGivenPoints = iInPoints;	//Assigning passed points to local points tracker.
+	displayPoints(iInPoints);
 	for (int icounter = 0; icounter < 4; icounter ++)
 	{
 		cout << "What would you like to do next ... \nSLEEP / CRY / POOP (PLEASE PUT ALL COMMANDS IN lower case)" << endl;
@@ -53,52 +54,103 @@ int infancy (int iInPoints)
 	return iGivenPoints;
 }
 
-int elemantrySchoolGoodKid (int iInPoints)
+int elemantarySchoolGoodKid (int iInPoints)
 {
 	int iGivenPoints = iInPoints;
 	string sIntroInput;
+	bool bCommandRecognized = true;
 
 	cout << "Welcome to the first day of school at School of Choice Elemantry School. \nAs a gesture to your excellent behaviour,";
-	cout << "your parents have enrolled you to \nthe best private shcool in town." << endl;
+	cout << "your parents have enrolled you to \nthe best private school in town." << endl;
 	cout << "You enter the school, and go to your class." << endl;
 	cout << "'Welcome to school' said your teacher 'Let us start with introducing ourselves.' She points at you first." << endl;
 	
-	cout << "What would you like to do ... \nTALK / CRY / SILENCE (PLEASE PUT ALL COMMANDS IN lower case)" << endl;
-	cin >> sIntroInput;
+	while(bCommandRecognized){
+		cout << "What would you like to do ... \nTALK / CRY / SILENCE (PLEASE PUT ALL COMMANDS IN lower case)" << endl;
+		cin >> sIntroInput;
+		if(sIntroInput.compare("talk")==0)
+		{
+			iGivenPoints = iGivenPoints + 5;
+			cout << "You introduce yourself. You have been awarded 5 points. " << endl;
+			displayPoints(iGivenPoints);
+			cout << "You pass Elemantry School with flying colours." << endl;
+			bCommandRecognized = false;
 
-	if(sIntroInput.compare("talk")==0)
-	{
-		iGivenPoints = iGivenPoints + 5;
-		cout << "You introduce yourself. You have been awarded 5 points. " << endl;
-		displayPoints(iGivenPoints);
-		cout << "You pass Elemantry School with flying colours." << endl;
+		}
+		else if(sIntroInput.compare("cry")==0)
+		{
+			iGivenPoints = iGivenPoints - 5;
+			cout << "You have lost 5 points. Your teacher calms you down." << endl;
+			displayPoints(iGivenPoints);
+			cout << "You pass Elemantry School but you don't do too well." << endl;
+			bCommandRecognized = false;
+		}
+		else if(sIntroInput.compare("silence")==0)
+		{
+			iGivenPoints = iGivenPoints - 3;
+			cout << "You remain silent. You have lost 3 points. Your teacher asks the next person." << endl;
+			displayPoints(iGivenPoints);
+			cout << "You pass Elemantry School without anyone noticing. You are the silent one." << endl;
+			bCommandRecognized = false;
+		}
+		else
+		{
+			cout << "Command was not recognized. You have been awarded no points." << endl;
+			displayPoints(iGivenPoints);
+			cout << "You fail Elemantry School! " << endl;
+		}
 	}
-	else if(sIntroInput.compare("cry")==0)
-	{
-		iGivenPoints = iGivenPoints - 5;
-		cout << "You have lost 5 points. Your teacher calms you down." << endl;
-		displayPoints(iGivenPoints);
-		cout << "You pass Elemantry School but you don't do too well." << endl;
+	//End of While
 
-	}
-	else if(sIntroInput.compare("silence")==0)
-	{
-		iGivenPoints = iGivenPoints - 3;
-		cout << "You remain silent. You have lost 3 points. Your teacher asks the next person." << endl;
-		displayPoints(iGivenPoints);
-		cout << "You pass Elemantry School without anyone noticing. You are the silent one." << endl;
-	}
-	else
-	{
-		cout << "Command was not recognized. You have been awarded no points." << endl;
-		displayPoints(iGivenPoints);
-		cout << "You fail Elemantry School!" << endl;
+
+	return iGivenPoints;
+}
+
+int elemantarySchoolBadKid (int iInPoints)
+{
+	int iGivenPoints = iInPoints;
+	int iIntroInput, iRandom1, iRandom2, iAnswer;
+	bool bCommandRecognized = true;
+
+	cout << "Welcome to the first day of school at School of Bad Choice Elemantry School." << endl;
+	cout << "your parents have enrolled you to \na public school in town." << endl;
+	cout << "You enter the school, and go to your class." << endl;
+	cout << "'Welcome to school' said your teacher 'I am Ms. Trouble Giver, call me Miss T. I am a high school graduate and I am here to teach you elementary Mathematics.' She points at you first." << endl;
 	
+	while(bCommandRecognized){
+		//int iAnswer = 57 + 33;
+		iRandom1 = randomNumberGenerator(30 , 62);
+		iRandom2 = randomNumberGenerator(30 , 62);
+		iAnswer = iRandom1 + iRandom2;
+
+		cout << "What is " << iRandom1 << " + " << iRandom2 << endl;
+		cin >> iIntroInput;
+
+		if(iAnswer == iIntroInput)
+		{
+			iGivenPoints = iGivenPoints + 2;
+			cout << "Congratulations! You got the answer right. You have been awarded 2 points.  " << endl;
+			displayPoints(iGivenPoints);
+			cout << "You pass Elemantry School with flying colours." << endl;
+			bCommandRecognized = false;
+
+		}
+		else if(iAnswer == iIntroInput)
+		{
+			iGivenPoints = iGivenPoints - 5;
+			cout << "You have lost 5 points. Your teacher calms you down." << endl;
+			displayPoints(iGivenPoints);
+			cout << "You pass Elemantry School but you don't do too well." << endl;
+			bCommandRecognized = false;
+		}
+		else
+		{
+			cout << "Command was not recognized. You have been awarded no points." << endl;
+			displayPoints(iGivenPoints);
+			cout << "You fail Elemantry School! " << endl;
+		}
 	}
-	
-
-	cout << "test";
-
+	//End of While
 	return iGivenPoints;
 }
 
