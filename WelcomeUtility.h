@@ -27,3 +27,11 @@ int randomNumberGenerator(int iModInt, int iAddInt)
 	iRandom = rand() % iModInt + iAddInt;
 	return iRandom;
 }
+void clearScreen ()
+{
+	string sinput1;
+	
+	cout << "Press any key to continue" << endl;
+	cin >> sinput1; 
+	system("CLS");
+}

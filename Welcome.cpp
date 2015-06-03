@@ -67,12 +67,16 @@ int main ()
 				cout << "You grow up to be a good kid without troubling your parents. Your parents have been able to ";
 				cout << "provide well for you. It is now up to you to make your life as successful as theirs." <<  endl;
 				elemantarySchoolGoodKid (ipoints);
+				highSchoolGoodKidCourses (ipoints);
+
 			}
 			else if(ipoints <= 10){
 				cout << "You have troubled your parents a lot. Your father is now bald. They have spent a fortune ";
 				cout << "on babysitters. Your future ahead is a tough challenge."<< endl;
 				bTroublesomeKid = true;
 				elemantarySchoolBadKid(ipoints);
+				highSchoolGoodKidCourses (ipoints);
+
 			}
 			
 		}
@@ -97,4 +101,4 @@ int main ()
 // 		sTempString.at[iCounter] = tolower(sInput.at[iCounter], loc);
 // 	}
 // 	return sTempString;
-// }
+//}

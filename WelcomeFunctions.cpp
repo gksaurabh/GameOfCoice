@@ -154,6 +154,96 @@ int elemantarySchoolBadKid (int iInPoints)
 	return iGivenPoints;
 }
 
+int highSchoolGoodKidCourses (int iInPoints)
+{
+	//clear screen before starting 
+	clearScreen();
+	// variables
+	int iGivenPoints = iInPoints;
+	bool bCommandRecognized = true;
+	string scourses, scommtech, sgym, sinput1, sprogramming;
+	// initialzation of variables
+	scommtech = ("technology");
+	sgym = ("gym");
+	sprogramming = ("programming"); 
+
+	cout << "Welcome to Good High School. Today you will have to choose your courses." << endl;
+	while (bCommandRecognized){
+		cout << "What courses would you like?" << endl;
+		cout << "TECHNOLOGY / GYM / PROGRAMMING (PLEASE PUT ALL YOUR COMMAND IN lower case)" << endl;
+		cin >> scourses;
+		if (scourses.compare(scommtech) == 0){
+			while (bCommandRecognized){
+				cout << "You have chosen technology. Good Pick!!" << endl;
+				cout << "GYM / PROGRAMMING (PLEASE PUT ALL YOUR COMMAND IN lower case)" << endl;
+				cin >> sinput1; 
+				if (sinput1.compare("gym") == 0){
+					cout << "You have chosen two courses. Good choice! You have to attend school every day. Other wise you will loose points." << endl; 
+					cout << "School starts on September 3. Remeber this date!! (hint hint!!)" << endl;
+					bCommandRecognized = false;
+				}
+				else if (sinput1.compare("programming") == 0){
+					cout << "You have chosen two courses. Good choice! You have to attend school every day. Other wise you will loose points." << endl; 
+					cout << "School starts on September 3. Remeber this date!! (hint hint!!)" << endl;
+					bCommandRecognized = false;
+				}
+				else{
+					cout << "Command was not recognized. Please try again!" << endl;
+				}
+			}
+			bCommandRecognized = false;
+		}
+		else if (scourses.compare(sgym) == 0){
+			while (bCommandRecognized){
+				cout << "TECHNOLOGY / PROGRAMMING (PLEASE PUT ALL YOUR COMMAND IN lower case)" << endl;
+				cin >> sinput1; 
+				if (sinput1.compare("technology") == 0){
+					cout << "You have chosen two courses. Good choice! You have to attend school every day. Other wise you will loose points." << endl; 
+					cout << "School starts on September 3. Remeber this date!! (hint hint!!)" << endl;
+					bCommandRecognized = false;
+				}
+				else if (sinput1.compare("programming") == 0){
+					cout << "You have chosen two courses. Good choice! You have to attend school every day. Other wise you will loose points." << endl; 
+					cout << "School starts on September 3. Remeber this date!! (hint hint!!)" << endl;
+					bCommandRecognized = false;
+				}
+				else{
+					cout << "Command was not recognized. Please try again!" << endl;
+				}
+			}
+			bCommandRecognized = false;
+		}
+		else if (scourses.compare(sprogramming) == 0){
+			while (bCommandRecognized){
+				cout << "TECHNOLOGY / GYM (PLEASE PUT ALL YOUR COMMAND IN lower case)" << endl;
+				cin >> sinput1; 
+				if (sinput1.compare("technology") == 0){
+					cout << "You have chosen two courses. Good choice! You have to attend school every day. Other wise you will loose points." << endl; 
+					cout << "School starts on September 3. Remeber this date!! (hint hint!!)" << endl;
+					bCommandRecognized = false;
+				}
+				else if (sinput1.compare("gym") == 0){
+					cout << "You have chosen two courses. Good choice! You have to attend school every day. Other wise you will loose points." << endl; 
+					cout << "School starts on September 3. Remeber this date!! (hint hint!!)" << endl;
+					bCommandRecognized = false;
+				}
+				else{
+					cout << "Command was not recognized. Please try again!" << endl;
+				}
+			}
+			bCommandRecognized = false;
+		}
+		else{
+
+			cout << "Command was not recognized. Please try again!" << endl;
+		}
+
+
+	}
+	return iGivenPoints; 
+
+}
+
 
 
 
