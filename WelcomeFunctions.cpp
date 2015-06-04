@@ -244,6 +244,11 @@ int highSchoolGoodKidCourses (int iInPoints)
 
 }
 
+int highSchoolGoodKid (int iInPoints)
+{
+	int iGivenPoints = iInPoints;
+	
+}
 
 
 
