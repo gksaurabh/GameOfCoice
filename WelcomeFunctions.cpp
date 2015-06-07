@@ -16,7 +16,7 @@ Due Date		: <due date>
 
 using namespace std;
 
-
+int highSchool(int iInPoints, string sInCourse1, string sInCourse2);
 int infancy (int iInPoints)
 {
 	//clear screen before starting 
@@ -167,10 +167,12 @@ int highSchoolGoodKidCourses (int iInPoints)
 	//clear screen before starting 
 	clearScreen();
 	// variables
-	string scourses1, scourses2, stech, sgym, sprogramming;
+	string sCourses1, sCourses2, stech, sgym, sprogramming;
 	bool bContinue = true;
 	bool bCommandRecognized = true;
 	int iGivenPoints;
+	string sCoursesAvailable[] = {"TECHNOLOGY", "GYM", "PROGRAMMING"};
+	string sCoursesChoosen[] = {};
 	// initialzation of variables
 	iGivenPoints =iInPoints;
 	stech = ("technology");
@@ -181,16 +183,17 @@ int highSchoolGoodKidCourses (int iInPoints)
 	while (bCommandRecognized){
 		cout << "What courses would you like?" << endl;
 		cout << "TECHNOLOGY / GYM / PROGRAMMING (PLEASE PUT ALL YOUR COMMAND IN lower case)" << endl;
-		cin >> scourses1;
-		if (scourses1.compare(stech) == 0) {
+		cin >> sCourses1;
+		sCoursesChoosen[0] = sCourses1;
+		if (sCourses1.compare(stech) == 0) {
 			while (bContinue){
 				cout << "GYM / PROGRAMMING (PLEASE PUT ALL YOUR COMMAND IN lower case)" << endl;
-				cin >> scourses2;
-				if (scourses2.compare(sgym) == 0) {
+				cin >> sCourses2;
+				if (sCourses2.compare(sgym) == 0) {
 					cout << "You have chosen two courses. School starts on September 3rd. Remember this date." << endl;
 					bContinue = false;
 				}
-				else if (scourses2.compare(sprogramming) == 0) {
+				else if (sCourses2.compare(sprogramming) == 0) {
 					cout << "You have chosen two courses. School starts on September 3rd. Remember this date." << endl;
 					bContinue = false;
 				}
@@ -200,15 +203,15 @@ int highSchoolGoodKidCourses (int iInPoints)
 			}
 			bCommandRecognized = false;	
 		}
-		else if (scourses1.compare(sgym) == 0) {
+		else if (sCourses1.compare(sgym) == 0) {
 			while (bContinue){
 				cout << "TECHNOLOGY / PROGRAMMING (PLEASE PUT ALL YOUR COMMAND IN lower case)" << endl;
-				cin >> scourses2;
-				if (scourses2.compare(stech) == 0) {
+				cin >> sCourses2;
+				if (sCourses2.compare(stech) == 0) {
 					cout << "You have chosen two courses. School starts on September 3rd. Remember this date." << endl;
 					bContinue = false;
 				}
-				else if (scourses2.compare(sprogramming) == 0) {
+				else if (sCourses2.compare(sprogramming) == 0) {
 					cout << "You have chosen two courses. School starts on September 3rd. Remember this date." << endl;
 					bContinue = false;
 				}
@@ -218,15 +221,15 @@ int highSchoolGoodKidCourses (int iInPoints)
 			}	
 			bCommandRecognized = false;	
 		}
-		else if (scourses1.compare(sprogramming) == 0) {
+		else if (sCourses1.compare(sprogramming) == 0) {
 			while (bContinue){
 				cout << "GYM / TECHNOLOGY (PLEASE PUT ALL YOUR COMMAND IN lower case)" << endl;
-				cin >> scourses2;
-				if (scourses2.compare(sgym) == 0) {
+				cin >> sCourses2;
+				if (sCourses2.compare(sgym) == 0) {
 					cout << "You have chosen two courses. School starts on September 3rd. Remember this date." << endl;
 					bContinue = false;
 				}
-				else if (scourses2.compare(stech) == 0) {
+				else if (sCourses2.compare(stech) == 0) {
 					cout << "You have chosen two courses. School starts on September 3rd. Remember this date." << endl;
 					bContinue = false;
 				}
@@ -243,7 +246,14 @@ int highSchoolGoodKidCourses (int iInPoints)
 	iGivenPoints = iGivenPoints + 10;
 	cout << "You have recieved 10 points for choosing your courses.";
 	displayPoints(iGivenPoints);
+	highSchool(iGivenPoints, sCourses1, sCourses2);
 	return iGivenPoints; 
+}
+
+int highSchool(int iInPoints, string sInCourse1, string sInCourse2){
+
+	cout << "Welcome to your first day of classes. You have choosen the following courses : " << sInCourse1 << " and " << sInCourse2 << "." << endl;
+	return -1;
 }
 
 

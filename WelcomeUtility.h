@@ -27,6 +27,8 @@ int randomNumberGenerator(int iModInt, int iAddInt)
 	iRandom = rand() % iModInt + iAddInt;
 	return iRandom;
 }
+
+
 void clearScreen ()
 {
 	string sinput1;
