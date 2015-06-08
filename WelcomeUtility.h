@@ -15,7 +15,7 @@ using namespace std;
 void displayPoints(int iTotalPoints);
 
 void displayPoints(int iTotalPoints){
-	cout << "Your total points so far is : " << iTotalPoints << endl;
+	cout << "\nYour total points so far is : " << iTotalPoints << endl;
 }
 
 int randomNumberGenerator(int iModInt, int iAddInt)
@@ -28,6 +28,17 @@ int randomNumberGenerator(int iModInt, int iAddInt)
 	return iRandom;
 }
 
+void highSchoolTimeTable (string sInCourse1, string sInCourse2)
+{
+	cout << "Here is your timetable for the school year" << endl << endl;
+	cout << "Period 1 : " << sInCourse1 << endl;
+	cout << "Period 2 : " << sInCourse2 << endl;
+	cout << "Lunch Break" << endl;
+	cout << "Period 3 : " << sInCourse1 << endl;
+	cout << "Period 4 : " << sInCourse2 << endl;
+	cout << "Volunteer hour" << endl;
+
+}
 
 void clearScreen ()
 {
@@ -35,5 +46,7 @@ void clearScreen ()
 	
 	cout << "Press any key to continue" << endl;
 	cin >> sinput1; 
-	system("CLS");
+	// system("CLS");
+	system("clear");
 }
+
